@@ -1,0 +1,26 @@
+[
+  {
+    "storage": [
+      {
+        "countryOfOrigin": "Poland",
+        "weight": 0
+      },
+      {
+        "countryOfOrigin": "Poland",
+        "weight": 0
+      }
+    ]
+  },
+  {
+    "storage": [
+      {
+        "countryOfOrigin": "Poland",
+        "weight": 0
+      },
+      {
+        "countryOfOrigin": "Ukraine",
+        "weight": 0
+      }
+    ]
+  }
+]
