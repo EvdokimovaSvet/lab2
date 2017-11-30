@@ -158,7 +158,7 @@ public class TestProduct {
 
     @Test
     public void checkSqlConnection(){
-        makeJDBCConnection();
+        mtion();
         addDataToDB("Potato", "USA", 5, LocalDate.of(2017,5,15),  LocalDate.of(2017,6,15) );
         addDataToDB("Cocoa", "China", 1, LocalDate.of(2017,6,25),  LocalDate.of(2017,7,15));
         addDataToDB("Apple", "Ukraine", 3, LocalDate.of(2017,5,15),  LocalDate.of(2017,10,15));
