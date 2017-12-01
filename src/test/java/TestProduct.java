@@ -1,6 +1,6 @@
 import builders.impls.Builder;
 import builders.impls.ProductBuilderDirector;
-import database.CrunchifyMySQLDBTutorial;
+import database.ConnectJavaWithMySQL;
 import model.Product;
 import model.Warehouse;
 import org.testng.annotations.Test;
@@ -12,7 +12,7 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-
+import static database.ConnectJavaWithMySQL.makeJDBCConnection;
 import static org.testng.Assert.assertEquals;
 
 
@@ -151,17 +151,16 @@ public class TestProduct {
         Warehouse warehouse = new Warehouse();
         warehouse.addProduct(new Builder().buildCountry("Poland").build());
         warehouse.addProduct(new Builder().buildCountry("Poland").build());
-        XmlUtil.writeToXmlFile(warehouse,"warehouse.xml");
+        XmlUtil.writeToXmlFile(warehouse, "warehouse.xml");
         Warehouse warehouseFromXml = XmlUtil.readFromXmlFile("warehouse.xml");
-        assertEquals(warehouseFromXml,warehouse);
+        assertEquals(warehouseFromXml, warehouse);
     }
 
     @Test
-    public void checkSqlConnection(){
-        mtion();
-        addDataToDB("Potato", "USA", 5, LocalDate.of(2017,5,15),  LocalDate.of(2017,6,15) );
-        addDataToDB("Cocoa", "China", 1, LocalDate.of(2017,6,25),  LocalDate.of(2017,7,15));
-        addDataToDB("Apple", "Ukraine", 3, LocalDate.of(2017,5,15),  LocalDate.of(2017,10,15));
-        getDataFromDB();
+    public void checkSqlConnection() throws SQLException {
+        makeJDBCConnection();
+        ConnectJavaWithMySQL.addDataToDB("Potato", "USA", 2, LocalDate.of(2017, 5, 15),LocalDate.of(2017, 6, 15));
+        ConnectJavaWithMySQL.getDataFromDB();
+        
     }
 }

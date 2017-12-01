@@ -4,26 +4,12 @@ import java.sql.*;
 import java.time.LocalDate;
 
 
-public class JavaWithMySQL {
+public class ConnectJavaWithMySQL {
 
-    static Connection Conn = null;
-    static PreparedStatement PrepareStat = null;
+    private static Connection Conn = null;
+    private static PreparedStatement PrepareStat = null;
 
-    public static void main(String[] argv) {
-        try {
-            makeJDBCConnection();
-            addDataToDB("Potato", "USA", 5, LocalDate.of(2017,5,15),  LocalDate.of(2017,6,15) );
-            addDataToDB("Cocoa", "China", 1, LocalDate.of(2017,6,25),  LocalDate.of(2017,7,15));
-            addDataToDB("Apple", "Ukraine", 3, LocalDate.of(2017,5,15),  LocalDate.of(2017,10,15));
-            getDataFromDB();
-            PrepareStat.close();
-            Conn.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-
-    private static void makeJDBCConnection() {
+    public static void makeJDBCConnection() {
         try {
             Class.forName("com.mysql.jdbc.Driver");
         } catch (ClassNotFoundException e) {
@@ -34,12 +20,11 @@ public class JavaWithMySQL {
             Conn = DriverManager.getConnection("jdbc:mysql://localhost:3307/warehouse", "root", "root");
         } catch (SQLException e) {
             e.printStackTrace();
-            return;
         }
 
     }
 
-    private static void addDataToDB(String nameOfProduct, String countryOfOrigin, int weight, LocalDate dateOfBirth, LocalDate dateOfDeath) {
+    public static void addDataToDB(String nameOfProduct, String countryOfOrigin, int weight, LocalDate dateOfBirth, LocalDate dateOfDeath) {
 
         try {
             String insertQueryStatement = "INSERT  INTO  Product  VALUES  (?,?,?,?,?)";
@@ -58,7 +43,7 @@ public class JavaWithMySQL {
         }
     }
 
-    private static void getDataFromDB() {
+    public static void getDataFromDB() {
 
         try {
             String getQueryStatement = "SELECT * FROM product";
