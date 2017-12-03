@@ -140,27 +140,34 @@ public class TestProduct {
         warehouse1.addProduct(new Builder().buildCountry("Ukraine").build());
         warehouses.add(warehouse);
         warehouses.add(warehouse1);
-        /*assertEquals(warehouse.totalWeightByStream(),warehouse.totalWeight());*/
-        JsonUtil.saveJson(warehouses, "warehouses.json");
-        List<Warehouse> warehouseFromJsonFile = JsonUtil.getWarehouseFromJsonFile("warehouses.json");
+        JsonUtil jsonUtil = new JsonUtil();
+        jsonUtil.serealise(warehouses, "warehouses.json");
+        List<Warehouse> warehouseFromJsonFile = jsonUtil.deserealise("warehouses.json");
         assertEquals(warehouses.size(), warehouseFromJsonFile.size());
     }
 
     @Test
     public void checkSavingToXml() throws IOException {
+        List<Warehouse> warehouses = new ArrayList<>();
         Warehouse warehouse = new Warehouse();
         warehouse.addProduct(new Builder().buildCountry("Poland").build());
         warehouse.addProduct(new Builder().buildCountry("Poland").build());
-        XmlUtil.writeToXmlFile(warehouse, "warehouse.xml");
-        Warehouse warehouseFromXml = XmlUtil.readFromXmlFile("warehouse.xml");
+        Warehouse warehouse1 = new Warehouse();
+        warehouse1.addProduct(new Builder().buildCountry("Poland").build());
+        warehouse1.addProduct(new Builder().buildCountry("Ukraine").build());
+        warehouses.add(warehouse);
+        warehouses.add(warehouse1);
+        XmlUtil xmlUtil = new XmlUtil();
+        xmlUtil.serealise(warehouses, "warehouse.xml");
+        List<Warehouse> warehouseFromXml = xmlUtil.deserealise("warehouse.xml");
         assertEquals(warehouseFromXml, warehouse);
     }
 
     @Test
     public void checkSqlConnection() throws SQLException {
         makeJDBCConnection();
-        ConnectJavaWithMySQL.addDataToDB("Potato", "USA", 2, LocalDate.of(2017, 5, 15),LocalDate.of(2017, 6, 15));
-        ConnectJavaWithMySQL.getDataFromDB();
-        
+        ConnectJavaWithMySQL.addDataToDBProduct("Potato", "USA", 2, LocalDate.of(2017, 5, 15),LocalDate.of(2017, 6, 15));
+        ConnectJavaWithMySQL.getDataFromDB(2);
+
     }
 }
