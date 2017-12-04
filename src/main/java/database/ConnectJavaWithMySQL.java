@@ -1,7 +1,5 @@
 package database;
 
-import sun.dc.pr.PRError;
-
 import java.sql.*;
 import java.time.LocalDate;
 
@@ -11,20 +9,50 @@ public class ConnectJavaWithMySQL {
     private static Connection Conn = null;
     private static PreparedStatement PrepareStat = null;
 
-    public static void makeJDBCConnection() {
+    public static Connection makeConnection() {
         try {
             Class.forName("com.mysql.jdbc.Driver");
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
-            return;
         }
         try {
-            Conn = DriverManager.getConnection("jdbc:mysql://localhost:3307/warehouse", "root", "root");
+            Conn = DriverManager.getConnection("jdbc:mysql://localhost:3307/warehouses", "root", "root");
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        return Conn;
 
     }
+
+    private static void createProductTable() throws SQLException {
+        String prepCreate="CREATE TABLE product\n" +
+                "(id_prod INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL,\n" +
+                " nameOfProduct CHAR(25) NOT NULL,\n" +
+                " cointryOfOrigin CHAR(25) NOT NULL,\n" +
+                " weight INTEGER NOT NULL,\n" +
+                " dateOfBirth DATE NOT  NULL,\n" +
+                " dateOfDeath DATE NOT NULL,\n" +
+                " idWare INTEGER REFERENCES warehouse(idWare));";
+        PreparedStatement preparedStatement =  Conn.prepareStatement(prepCreate);
+        preparedStatement.executeUpdate();
+
+    }
+
+    private static void createWarehouseTable() throws SQLException {
+        String prepCreate="CREATE TABLE warehouse\n" +
+                "(idWare INTEGER PRIMARY KEY  AUTO_INCREMENT NOT NULL,\n" +
+                " nameOfWarehouse CHAR(25) NOT NULL );";
+        PreparedStatement preparedStatement =  Conn.prepareStatement(prepCreate);
+        preparedStatement.executeUpdate();
+    }
+
+    public static void setDatabase() throws SQLException, ClassNotFoundException {
+        Conn = makeConnection();
+        createWarehouseTable();
+        createProductTable();
+        Conn.close();
+    }
+
 
     public static void addDataToDBProduct(String nameOfProduct, String countryOfOrigin, int weight, LocalDate dateOfBirth, LocalDate dateOfDeath, int idWare) {
 
@@ -40,7 +68,6 @@ public class ConnectJavaWithMySQL {
             PrepareStat.setInt(6,idWare);
             PrepareStat.executeUpdate();
         } catch (
-
                 SQLException e) {
             e.printStackTrace();
         }
@@ -82,5 +109,13 @@ public class ConnectJavaWithMySQL {
             e.printStackTrace();
         }
 
+    }
+
+    private static void dropTable() throws SQLException, ClassNotFoundException {
+        Connection conn = makeConnection();
+        Statement st = conn.createStatement();
+        st.executeUpdate("DROP TABLE IF EXISTS 'warehouse';");
+        st.executeUpdate("DROP TABLE IF EXISTS 'product';");
+        conn.close();
     }
 }

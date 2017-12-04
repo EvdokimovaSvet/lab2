@@ -9,10 +9,8 @@ import util.XmlUtil;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import static database.ConnectJavaWithMySQL.makeJDBCConnection;
 import static org.testng.Assert.assertEquals;
 
 
@@ -51,24 +49,13 @@ public class TestProduct {
     }
 
     @Test
-    public void checkCountProductFromCountry() {
-        Warehouse warehouse = new Warehouse();
-        warehouse.addProduct(new Builder().buildCountry("Poland").build());
-        warehouse.addProduct(new Builder().buildCountry("Poland").build());
-        warehouse.addProduct(new Builder().buildCountry("Ukraine").build());
-        warehouse.addProduct(new Builder().buildCountry("Poland").build());
-        assertEquals(warehouse.countOfProductFromCountry("Poland"), 3);
-
-    }
-
-    @Test
     public void checkListProductFromCountry() {
         Warehouse warehouse = new Warehouse();
         warehouse.addProduct(new Builder().buildCountry("Poland").build());
         warehouse.addProduct(new Builder().buildCountry("Poland").build());
         warehouse.addProduct(new Builder().buildCountry("Ukraine").build());
         warehouse.addProduct(new Builder().buildCountry("Poland").build());
-        assertEquals(warehouse.listOfProductFromCountry("Poland").size(), warehouse.countOfProductFromCountry("Poland"));
+        assertEquals(warehouse.listOfProductFromCountry("Poland").size(), 3);
     }
 
     @Test
@@ -109,16 +96,6 @@ public class TestProduct {
 
     }
 
-    @Test
-    public void checkCountProductFromCountryByStream() {
-        Warehouse warehouse = new Warehouse();
-        warehouse.addProduct(new Builder().buildCountry("Poland").build());
-        warehouse.addProduct(new Builder().buildCountry("Poland").build());
-        warehouse.addProduct(new Builder().buildCountry("Poland").build());
-        warehouse.addProduct(new Builder().buildCountry("Ukraine").build());
-        assertEquals(warehouse.countOfProductFromCountryByStream("Poland"), warehouse.countOfProductFromCountry("Poland"));
-
-    }
 
     @Test
     public void checkTotalWeightByStream() {
@@ -165,9 +142,6 @@ public class TestProduct {
 
     @Test
     public void checkSqlConnection() throws SQLException {
-        makeJDBCConnection();
-        ConnectJavaWithMySQL.addDataToDBProduct("Potato", "USA", 2, LocalDate.of(2017, 5, 15),LocalDate.of(2017, 6, 15));
-        ConnectJavaWithMySQL.getDataFromDB(2);
 
     }
 }
