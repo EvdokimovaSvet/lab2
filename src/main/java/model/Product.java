@@ -1,14 +1,21 @@
 package model;
 
+import java.sql.Date;
 import java.time.LocalDate;
 
 public class Product {
+
+    private int idProduct;
     private String nameOfProduct;
     private String countryOfOrigin;
     private int weight;
     private LocalDate dateOfCreate;
     private LocalDate dateOfDeath;
+    private int idWare;
 
+    public int getIdOfProduct() {
+        return idProduct;
+    }
 
     public String getNameOfProduct() {
         return nameOfProduct;
@@ -30,6 +37,12 @@ public class Product {
         return dateOfDeath;
     }
 
+    public int getIdWare() {return idWare;}
+
+    public Object setIdProduct(int id) {
+        this.idProduct = id;
+        return this;
+    }
     public Object setName(String nameOfProduct) {
         this.nameOfProduct = nameOfProduct;
         return this;
@@ -52,6 +65,11 @@ public class Product {
 
     public Object setDateOfDeath(int year, int month, int day) {
         this.dateOfDeath = LocalDate.of(year, month, day);
+        return this;
+    }
+
+    public Object setIdWare(int id) {
+        this.idWare = id;
         return this;
     }
 
@@ -126,6 +144,5 @@ public class Product {
         if (dateOfDeath.isBefore(today)) return false;
         else return true;
     }
-
 }
 

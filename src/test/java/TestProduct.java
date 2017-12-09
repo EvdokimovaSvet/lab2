@@ -9,6 +9,7 @@ import util.XmlUtil;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import static org.testng.Assert.assertEquals;
@@ -25,7 +26,7 @@ public class TestProduct {
 
     @Test
     public void testBuilder() {
-        Product ob = new ProductBuilderDirector(new Builder()).construct("Milk", "Germany", 900, 15);
+        Product ob = new Builder().buildName("Milk").buildCountry("Germany").buildWeight(900).build();
         assertEquals(ob.getWeight(), 900);
 
     }
@@ -33,8 +34,8 @@ public class TestProduct {
     @Test
     public void checkAddingAndSizeOfWarehouse() {
         Warehouse warehouse = new Warehouse();
-        warehouse.addProduct(new ProductBuilderDirector(new Builder()).construct("Yogurt", "Ukraine", 200, 20));
-        warehouse.addProduct(new ProductBuilderDirector(new Builder()).construct("Cream", "Ukraine", 250, 20));
+        warehouse.addProduct(new Builder().buildName("Yogurt").buildCountry("Ukraine").buildWeight(200).build());
+        warehouse.addProduct(new Builder().buildName("Cream").buildCountry("Ukraine").buildWeight(250).build());
         assertEquals(warehouse.size(), 2);
 
     }
@@ -61,9 +62,9 @@ public class TestProduct {
     @Test
     public void checkWarehouseExpired() {
         Warehouse warehouse = new Warehouse();
-        warehouse.addProduct(new Builder().buildDC().buildDD(30).build());
-        warehouse.addProduct(new Builder().buildDC().buildDD(30).build());
-        warehouse.addProduct(new Builder().buildDC().buildDD(30).build());
+        warehouse.addProduct(new Builder().buildDC(LocalDate.now()).buildDD(LocalDate.of(2017,12,10)).build());
+        warehouse.addProduct(new Builder().buildDC(LocalDate.now()).buildDD(LocalDate.of(2017,12,10)).build());
+        warehouse.addProduct(new Builder().buildDC(LocalDate.now()).buildDD(LocalDate.of(2017,12,10)).build());
         Product product = new Product();
         product.setDateOfDeath(2017, 10, 31);
         warehouse.addProduct(product);
@@ -74,9 +75,9 @@ public class TestProduct {
     @Test
     public void checkWarehouseExpiredByStream() {
         Warehouse warehouse = new Warehouse();
-        warehouse.addProduct(new Builder().buildDC().buildDD(30).build());
-        warehouse.addProduct(new Builder().buildDC().buildDD(30).build());
-        warehouse.addProduct(new Builder().buildDC().buildDD(30).build());
+        warehouse.addProduct(new Builder().buildDC(LocalDate.now()).buildDD(LocalDate.of(2017,12,10)).build());
+        warehouse.addProduct(new Builder().buildDC(LocalDate.now()).buildDD(LocalDate.of(2017,12,10)).build());
+        warehouse.addProduct(new Builder().buildDC(LocalDate.now()).buildDD(LocalDate.of(2017,12,10)).build());
         Product product = new Product();
         product.setDateOfDeath(2017, 10, 31);
         warehouse.addProduct(product);

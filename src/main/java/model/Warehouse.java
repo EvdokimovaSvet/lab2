@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 
 
 public class Warehouse {
+    private int idware;
     private String nameOfWarehouse;
     private List<Product> storage;
 
@@ -15,6 +16,10 @@ public class Warehouse {
     }
 
     public void setName(String name){this.nameOfWarehouse=name;}
+    public void setId(int id){this.idware=id;}
+
+    public int getId(){return this.idware;}
+    public String getName(){return this.nameOfWarehouse;}
 
     public List<Product> getProducts() {
         return storage;

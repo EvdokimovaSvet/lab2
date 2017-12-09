@@ -1,5 +1,12 @@
 package database;
 
+import builders.ProductBuilder;
+import builders.impls.Builder;
+import builders.impls.ProductBuilderDirector;
+import model.Product;
+import model.Warehouse;
+import sun.plugin.perf.PluginRollup;
+
 import java.sql.*;
 import java.time.LocalDate;
 
@@ -30,7 +37,7 @@ public class ConnectJavaWithMySQL {
                 " nameOfProduct CHAR(25) NOT NULL,\n" +
                 " cointryOfOrigin CHAR(25) NOT NULL,\n" +
                 " weight INTEGER NOT NULL,\n" +
-                " dateOfBirth DATE NOT  NULL,\n" +
+                " dateOfCreate DATE NOT  NULL,\n" +
                 " dateOfDeath DATE NOT NULL,\n" +
                 " idWare INTEGER REFERENCES warehouse(idWare));";
         PreparedStatement preparedStatement =  Conn.prepareStatement(prepCreate);
@@ -53,24 +60,88 @@ public class ConnectJavaWithMySQL {
         Conn.close();
     }
 
-
-    public static void addDataToDBProduct(String nameOfProduct, String countryOfOrigin, int weight, LocalDate dateOfBirth, LocalDate dateOfDeath, int idWare) {
+    public static void addProduct(Product product, Warehouse warehouse) {
 
         try {
-            String insertQueryStatement = "INSERT  INTO  Product (nameOfProduct,countryOfOrigin,weight,dateOfBirth,dateOfDeath,id_ware) VALUES  (?,?,?,?,?,?)";
+            Conn = makeConnection();
+            Conn.createStatement();
+
+            String insertQueryStatement = "INSERT  INTO  Product (id_prod, nameOfProduct,countryOfOrigin,weight,dateOfBirth,dateOfDeath,id_ware) VALUES  (?,?,?,?,?,?,?)";
 
             PrepareStat = Conn.prepareStatement(insertQueryStatement);
-            PrepareStat.setString(1, nameOfProduct);
-            PrepareStat.setString(2, countryOfOrigin);
-            PrepareStat.setInt(3, weight);
-            PrepareStat.setDate(4, Date.valueOf(dateOfBirth));
-            PrepareStat.setDate(5, Date.valueOf(dateOfDeath));
-            PrepareStat.setInt(6,idWare);
+            PrepareStat.setInt(1, product.getIdOfProduct());
+            PrepareStat.setString(2, product.getNameOfProduct());
+            PrepareStat.setString(3, product.getCountry());
+            PrepareStat.setInt(4, product.getWeight());
+            PrepareStat.setDate(5, Date.valueOf(product.getDateOfCreate()));
+            PrepareStat.setDate(6, Date.valueOf(product.getDateOfDeath()));
+            PrepareStat.setInt(7,warehouse.getId());
             PrepareStat.executeUpdate();
         } catch (
                 SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    public static Warehouse addWarehouseWithoutProducts(Warehouse warehouse) throws ClassNotFoundException, SQLException{
+        Conn = makeConnection();
+        Conn.createStatement();
+        String preparedUpdate1="Insert into warehouse (idware, name) values(?,?);";
+        PreparedStatement pr1= Conn.prepareStatement(preparedUpdate1);
+        pr1.setInt(1, warehouse.getId());
+        pr1.setString(2, warehouse.getName());
+        pr1.executeUpdate();
+
+        String preparedQuery1="Select idware FROM warehouse WHERE idware=? ;";
+        PreparedStatement pr2= Conn.prepareStatement(preparedQuery1);
+        pr2.setInt(1, warehouse.getId());
+        ResultSet resultSet=pr2.executeQuery();
+        if(resultSet.next())
+            warehouse.setId(resultSet.getInt("idware"));
+        return warehouse;
+    }
+
+    public static void addWarehouse(Warehouse warehouse) throws ClassNotFoundException, SQLException {
+        warehouse=addWarehouseWithoutProducts(warehouse);
+        for(Product product : warehouse.getProducts()) {
+            addProduct(product, warehouse);
+        }
+    }
+
+
+    public static Product getProductById(Integer id) throws SQLException, ClassNotFoundException {
+        Conn = makeConnection();
+        Conn.createStatement();
+        String preparedQuerry1="SELECT c.id_prod as id_prod,"
+                + "c.nameOfProduct as nameOfProduct,"
+                + "c.countryOfOrigin as countryOfOrigin,"
+                + "c.weight as weight,"
+                + "c.dateOfCreate as dateOfCreate,"
+                + "c.dateOfDeath as dateOfDeath,"
+                + "c.idware as idware FROM product c"
+                +" WHERE  c.id_prod=?;";
+
+        PreparedStatement preparedStmt1=Conn.prepareStatement(preparedQuerry1);
+        preparedStmt1.setInt(1,id);
+        ResultSet resultSet = preparedStmt1.executeQuery();
+
+        Product product = null;
+        if(resultSet.next()) {
+            product = new ProductBuilderDirector(new Builder()).construct(resultSet.getInt(1),
+                    resultSet.getString(2),resultSet.getString(3),
+                    resultSet.getInt(4), resultSet.getDate(5).toLocalDate(),
+                    resultSet.getDate(6).toLocalDate(),resultSet.getInt(7));
+           }
+        Conn.close();
+        return product;
+    }
+
+    private static void dropTable() throws SQLException, ClassNotFoundException {
+        Connection conn = makeConnection();
+        Statement st = conn.createStatement();
+        st.executeUpdate("DROP TABLE IF EXISTS 'warehouse';");
+        st.executeUpdate("DROP TABLE IF EXISTS 'product';");
+        conn.close();
     }
 
     public static void addDataToDBWarehouse(int idWare,String nameOfWarehouse) {
@@ -89,33 +160,6 @@ public class ConnectJavaWithMySQL {
         }
     }
 
-    public static void getDataFromDB(int id) {
 
-        try {
-            String getQueryStatement = "SELECT * FROM product WHERE product.id="+id+";";
-            PrepareStat = Conn.prepareStatement(getQueryStatement);
-            ResultSet rs = PrepareStat.executeQuery();
-            while (rs.next()) {
-                String nameOfProduct = rs.getString("nameOfProduct");
-                String countryOfOrigin = rs.getString("countryOfOrigin");
-                int weight = rs.getInt("weight");
-                Date dateOfBirth = rs.getDate("dateOfBirth");
-                Date dateOfDeath = rs.getDate("dateOfDeath");
-                System.out.format("%s, %s, %s, %s, %s\n", nameOfProduct, countryOfOrigin, weight, dateOfBirth, dateOfDeath);
-            }
-        } catch (
 
-                SQLException e) {
-            e.printStackTrace();
-        }
-
-    }
-
-    private static void dropTable() throws SQLException, ClassNotFoundException {
-        Connection conn = makeConnection();
-        Statement st = conn.createStatement();
-        st.executeUpdate("DROP TABLE IF EXISTS 'warehouse';");
-        st.executeUpdate("DROP TABLE IF EXISTS 'product';");
-        conn.close();
-    }
 }
