@@ -1,14 +1,11 @@
 package database;
 
-import builders.ProductBuilder;
 import builders.impls.Builder;
 import builders.impls.ProductBuilderDirector;
 import model.Product;
 import model.Warehouse;
-import sun.plugin.perf.PluginRollup;
 
 import java.sql.*;
-import java.time.LocalDate;
 
 
 public class ConnectJavaWithMySQL {
