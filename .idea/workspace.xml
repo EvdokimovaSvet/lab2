@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bbc0a359-ca22-4b7e-9bf6-c47ca1e93e90" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/database/ConnectJavaWithMySQL.java" afterPath="$PROJECT_DIR$/src/main/java/database/ConnectJavaWithMySQL.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -29,25 +30,37 @@
       <file leaf-file-name="ConnectJavaWithMySQL.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/database/ConnectJavaWithMySQL.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="17" lean-forward="true" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+            <state relative-caret-position="1094">
+              <caret line="153" column="3" lean-forward="false" selection-start-line="153" selection-start-column="3" selection-end-line="153" selection-end-column="3" />
               <folding>
-                <marker date="1512825632544" expanded="true" signature="825:1035" ph="CREATE TABLE... product" />
-                <marker date="1512825632544" expanded="true" signature="825:1038" ph="CREATE TABLE... product" />
-                <marker date="1512825632544" expanded="true" signature="825:1083" ph="CREATE TABLE... product" />
-                <marker date="1512825632544" expanded="true" signature="825:1135" ph="CREATE TABLE... product" />
-                <marker date="1512825632544" expanded="true" signature="825:1185" ph="CREATE TABLE... product" />
-                <marker date="1512825632544" expanded="true" signature="825:1223" ph="CREATE TABLE... product" />
-                <marker date="1512825632544" expanded="true" signature="825:1253" ph="CREATE TABLE... product" />
-                <marker date="1512825632544" expanded="true" signature="1486:1643" ph="CREATE TABLE... department" />
-                <marker date="1512825632544" expanded="true" signature="2192:2317" ph="INSERT INTO Product" />
-                <marker date="1512825632544" expanded="true" signature="3203:3251" ph="Insert into garage... " />
-                <marker date="1512825632544" expanded="true" signature="3476:3519" ph="Select garag... garage" />
-                <marker date="1512825632544" expanded="true" signature="4279:4654" ph="SELECT c.car... car" />
-                <marker date="1512825632544" expanded="true" signature="5480:5512" ph="DROP TABLE I... " />
-                <marker date="1512825632544" expanded="true" signature="5543:5573" ph="DROP TABLE I... " />
-                <marker date="1512825632544" expanded="true" signature="5746:5792" ph="INSERT INTO Product" />
+                <element signature="imports" expanded="true" />
+                <marker date="1512971192678" expanded="true" signature="902:1112" ph="CREATE TABLE... product" />
+                <marker date="1512971192678" expanded="true" signature="902:1115" ph="CREATE TABLE... product" />
+                <marker date="1512971192678" expanded="true" signature="902:1160" ph="CREATE TABLE... product" />
+                <marker date="1512971192678" expanded="true" signature="902:1212" ph="CREATE TABLE... product" />
+                <marker date="1512971192678" expanded="true" signature="902:1262" ph="CREATE TABLE... product" />
+                <marker date="1512971192678" expanded="true" signature="902:1300" ph="CREATE TABLE... product" />
+                <marker date="1512971192678" expanded="true" signature="902:1330" ph="CREATE TABLE... product" />
+                <marker date="1512971192678" expanded="true" signature="1563:1720" ph="CREATE TABLE... department" />
+                <marker date="1512971192678" expanded="true" signature="2269:2394" ph="INSERT INTO Product" />
+                <marker date="1512971192678" expanded="true" signature="3280:3328" ph="Insert into garage... " />
+                <marker date="1512971192678" expanded="true" signature="3553:3596" ph="Select garag... garage" />
+                <marker date="1512971192678" expanded="true" signature="4356:4731" ph="SELECT c.car... car" />
+                <marker date="1512971192678" expanded="true" signature="5598:5649" ph="SELECT Selec... " />
+                <marker date="1512971192678" expanded="true" signature="5647:5649" ph="Select teach... teachers" />
+                <marker date="1512971192678" expanded="true" signature="6212:6244" ph="DROP TABLE I... " />
+                <marker date="1512971192678" expanded="true" signature="6282:6312" ph="DROP TABLE I... " />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Warehouse.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/model/Warehouse.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -126,7 +139,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="10" />
     <option name="y" value="20" />
     <option name="width" value="1346" />
@@ -166,7 +179,6 @@
     <panes>
       <pane id="Scope" />
       <pane id="Scratches" />
-      <pane id="AndroidView" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -255,6 +267,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -531,7 +544,8 @@
       <workItem from="1512220944899" duration="6474000" />
       <workItem from="1512371848485" duration="4030000" />
       <workItem from="1512629508107" duration="667000" />
-      <workItem from="1512726494463" duration="8399000" />
+      <workItem from="1512726494463" duration="9379000" />
+      <workItem from="1512970155564" duration="1015000" />
     </task>
     <task id="LOCAL-00001" summary="kjbk">
       <created>1512072039139</created>
@@ -576,7 +590,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70363000" />
+    <option name="totallyTimeSpent" value="72358000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -588,7 +602,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -597,20 +611,20 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32840723" sideWeight="0.5030257" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15355521" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14901665" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32840723" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32840723" sideWeight="0.4969743" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24281392" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2397882" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -944,14 +958,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/Warehouse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/builders/impls/Builder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
@@ -964,9 +970,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="20" column="41" lean-forward="false" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -996,26 +999,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/Warehouse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/database/ConnectJavaWithMySQL.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="17" lean-forward="true" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        <state relative-caret-position="1094">
+          <caret line="153" column="3" lean-forward="false" selection-start-line="153" selection-start-column="3" selection-end-line="153" selection-end-column="3" />
           <folding>
-            <marker date="1512825632544" expanded="true" signature="825:1035" ph="CREATE TABLE... product" />
-            <marker date="1512825632544" expanded="true" signature="825:1038" ph="CREATE TABLE... product" />
-            <marker date="1512825632544" expanded="true" signature="825:1083" ph="CREATE TABLE... product" />
-            <marker date="1512825632544" expanded="true" signature="825:1135" ph="CREATE TABLE... product" />
-            <marker date="1512825632544" expanded="true" signature="825:1185" ph="CREATE TABLE... product" />
-            <marker date="1512825632544" expanded="true" signature="825:1223" ph="CREATE TABLE... product" />
-            <marker date="1512825632544" expanded="true" signature="825:1253" ph="CREATE TABLE... product" />
-            <marker date="1512825632544" expanded="true" signature="1486:1643" ph="CREATE TABLE... department" />
-            <marker date="1512825632544" expanded="true" signature="2192:2317" ph="INSERT INTO Product" />
-            <marker date="1512825632544" expanded="true" signature="3203:3251" ph="Insert into garage... " />
-            <marker date="1512825632544" expanded="true" signature="3476:3519" ph="Select garag... garage" />
-            <marker date="1512825632544" expanded="true" signature="4279:4654" ph="SELECT c.car... car" />
-            <marker date="1512825632544" expanded="true" signature="5480:5512" ph="DROP TABLE I... " />
-            <marker date="1512825632544" expanded="true" signature="5543:5573" ph="DROP TABLE I... " />
-            <marker date="1512825632544" expanded="true" signature="5746:5792" ph="INSERT INTO Product" />
+            <element signature="imports" expanded="true" />
+            <marker date="1512971192678" expanded="true" signature="902:1112" ph="CREATE TABLE... product" />
+            <marker date="1512971192678" expanded="true" signature="902:1115" ph="CREATE TABLE... product" />
+            <marker date="1512971192678" expanded="true" signature="902:1160" ph="CREATE TABLE... product" />
+            <marker date="1512971192678" expanded="true" signature="902:1212" ph="CREATE TABLE... product" />
+            <marker date="1512971192678" expanded="true" signature="902:1262" ph="CREATE TABLE... product" />
+            <marker date="1512971192678" expanded="true" signature="902:1300" ph="CREATE TABLE... product" />
+            <marker date="1512971192678" expanded="true" signature="902:1330" ph="CREATE TABLE... product" />
+            <marker date="1512971192678" expanded="true" signature="1563:1720" ph="CREATE TABLE... department" />
+            <marker date="1512971192678" expanded="true" signature="2269:2394" ph="INSERT INTO Product" />
+            <marker date="1512971192678" expanded="true" signature="3280:3328" ph="Insert into garage... " />
+            <marker date="1512971192678" expanded="true" signature="3553:3596" ph="Select garag... garage" />
+            <marker date="1512971192678" expanded="true" signature="4356:4731" ph="SELECT c.car... car" />
+            <marker date="1512971192678" expanded="true" signature="5598:5649" ph="SELECT Selec... " />
+            <marker date="1512971192678" expanded="true" signature="5647:5649" ph="Select teach... teachers" />
+            <marker date="1512971192678" expanded="true" signature="6212:6244" ph="DROP TABLE I... " />
+            <marker date="1512971192678" expanded="true" signature="6282:6312" ph="DROP TABLE I... " />
           </folding>
         </state>
       </provider>

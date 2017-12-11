@@ -6,6 +6,9 @@ import model.Product;
 import model.Warehouse;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.TreeSet;
 
 
 public class ConnectJavaWithMySQL {
@@ -133,30 +136,26 @@ public class ConnectJavaWithMySQL {
         return product;
     }
 
-    private static void dropTable() throws SQLException, ClassNotFoundException {
-        Connection conn = makeConnection();
-        Statement st = conn.createStatement();
-        st.executeUpdate("DROP TABLE IF EXISTS 'warehouse';");
-        st.executeUpdate("DROP TABLE IF EXISTS 'product';");
-        conn.close();
-    }
-
-    public static void addDataToDBWarehouse(int idWare,String nameOfWarehouse) {
-
-        try {
-            String insertQueryStatement = "INSERT  INTO  Product (id, name) VALUES  (?,?)";
-
-            PrepareStat = Conn.prepareStatement(insertQueryStatement);
-            PrepareStat.setInt(1, idWare);
-            PrepareStat.setString(2, nameOfWarehouse);
-            PrepareStat.executeUpdate();
-        } catch (
-
-                SQLException e) {
-            e.printStackTrace();
+    public static List<String> getProductByWarehouse(Warehouse warehouse) throws SQLException, ClassNotFoundException{
+        List<String> namesProducts = new ArrayList<>();
+        Conn = makeConnection();
+        String preparedQuerry1="SELECT nameOfProduct FROM Product WHERE id_ware = ?;";
+        PreparedStatement preparedStmt =  Conn.prepareStatement(preparedQuerry1);
+        preparedStmt.setInt(1, warehouse.getId());
+        ResultSet resultSet=preparedStmt.executeQuery();
+        while(resultSet.next())
+        {
+            namesProducts.add(resultSet.getString(2));
         }
+        Conn.close();
+        return namesProducts;
     }
 
-
-
+    private static void dropTables() throws SQLException, ClassNotFoundException {
+        Conn = makeConnection();
+        Statement statement = Conn.createStatement();
+        statement.executeUpdate("DROP TABLE IF EXISTS 'warehouse';");
+        statement.executeUpdate("DROP TABLE IF EXISTS 'product';");
+        Conn.close();
+    }
 }
