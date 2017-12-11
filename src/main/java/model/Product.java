@@ -1,8 +1,9 @@
 package model;
 
+import javax.xml.bind.annotation.XmlRootElement;
 import java.sql.Date;
 import java.time.LocalDate;
-
+@XmlRootElement( name = "Product")
 public class Product {
 
     private int idProduct;

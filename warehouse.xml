@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<warehouse>
-    <storage>
+<Warehouse>
+    <id>1</id>
+    <name>Glory</name>
+    <products>
         <country>Poland</country>
+        <idWare>0</idWare>
         <weight>0</weight>
-    </storage>
-    <storage>
+    </products>
+    <products>
         <country>Poland</country>
+        <idWare>0</idWare>
         <weight>0</weight>
-    </storage>
-</warehouse>
+    </products>
+</Warehouse>

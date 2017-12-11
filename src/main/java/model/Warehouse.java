@@ -1,11 +1,13 @@
 package model;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Collectors;
 
-
+@XmlRootElement( name = "Warehouse")
 public class Warehouse {
     private int idware;
     private String nameOfWarehouse;
@@ -17,16 +19,15 @@ public class Warehouse {
 
     public void setName(String name){this.nameOfWarehouse=name;}
     public void setId(int id){this.idware=id;}
+    public void setStorage(List<Product> storage) {
+        this.storage = storage;
+    }
 
     public int getId(){return this.idware;}
     public String getName(){return this.nameOfWarehouse;}
-
+    @XmlElement
     public List<Product> getProducts() {
         return storage;
-    }
-
-    public void setStorage(List<Product> storage) {
-        this.storage = storage;
     }
 
     public Warehouse addProduct(Product product) {
@@ -92,13 +93,16 @@ public class Warehouse {
 
         Warehouse warehouse = (Warehouse) o;
 
-        if (nameOfWarehouse != null ? !nameOfWarehouse.equals(warehouse.nameOfWarehouse) : warehouse.nameOfWarehouse != null) return false;
+        if (idware != warehouse.idware) return false;
+        if (nameOfWarehouse != null ? !nameOfWarehouse.equals(warehouse.nameOfWarehouse) : warehouse.nameOfWarehouse != null)
+            return false;
         return storage != null ? storage.equals(warehouse.storage) : warehouse.storage == null;
     }
 
     @Override
     public int hashCode() {
-        int result = nameOfWarehouse != null ? nameOfWarehouse.hashCode() : 0;
+        int result = idware;
+        result = 31 * result + (nameOfWarehouse != null ? nameOfWarehouse.hashCode() : 0);
         result = 31 * result + (storage != null ? storage.hashCode() : 0);
         return result;
     }

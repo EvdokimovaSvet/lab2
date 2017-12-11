@@ -1,6 +1,4 @@
 import builders.impls.Builder;
-import builders.impls.ProductBuilderDirector;
-import database.ConnectJavaWithMySQL;
 import model.Product;
 import model.Warehouse;
 import org.testng.annotations.Test;
@@ -12,6 +10,7 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+
 import static org.testng.Assert.assertEquals;
 
 
@@ -62,22 +61,22 @@ public class TestProduct {
     @Test
     public void checkWarehouseExpired() {
         Warehouse warehouse = new Warehouse();
-        warehouse.addProduct(new Builder().buildDC(LocalDate.now()).buildDD(LocalDate.of(2017,12,10)).build());
-        warehouse.addProduct(new Builder().buildDC(LocalDate.now()).buildDD(LocalDate.of(2017,12,10)).build());
-        warehouse.addProduct(new Builder().buildDC(LocalDate.now()).buildDD(LocalDate.of(2017,12,10)).build());
+        warehouse.addProduct(new Builder().buildDC(LocalDate.now()).buildDD(LocalDate.of(2017,12,30)).build());
+        warehouse.addProduct(new Builder().buildDC(LocalDate.now()).buildDD(LocalDate.of(2017,12,30)).build());
+        warehouse.addProduct(new Builder().buildDC(LocalDate.now()).buildDD(LocalDate.of(2017,12,30)).build());
         Product product = new Product();
         product.setDateOfDeath(2017, 10, 31);
         warehouse.addProduct(product);
         warehouse.deleteAllExpiredProduct();
-        assertEquals(warehouse.size(), 3);
+        assertEquals(warehouse.getProducts().size(), 3);
     }
 
     @Test
     public void checkWarehouseExpiredByStream() {
         Warehouse warehouse = new Warehouse();
-        warehouse.addProduct(new Builder().buildDC(LocalDate.now()).buildDD(LocalDate.of(2017,12,10)).build());
-        warehouse.addProduct(new Builder().buildDC(LocalDate.now()).buildDD(LocalDate.of(2017,12,10)).build());
-        warehouse.addProduct(new Builder().buildDC(LocalDate.now()).buildDD(LocalDate.of(2017,12,10)).build());
+        warehouse.addProduct(new Builder().buildDC(LocalDate.now()).buildDD(LocalDate.of(2017,12,30)).build());
+        warehouse.addProduct(new Builder().buildDC(LocalDate.now()).buildDD(LocalDate.of(2017,12,30)).build());
+        warehouse.addProduct(new Builder().buildDC(LocalDate.now()).buildDD(LocalDate.of(2017,12,30)).build());
         Product product = new Product();
         product.setDateOfDeath(2017, 10, 31);
         warehouse.addProduct(product);
@@ -109,35 +108,25 @@ public class TestProduct {
 
     @Test
     public void checkSavingToJson() throws IOException {
-        List<Warehouse> warehouses = new ArrayList<>();
         Warehouse warehouse = new Warehouse();
         warehouse.addProduct(new Builder().buildCountry("Poland").build());
         warehouse.addProduct(new Builder().buildCountry("Poland").build());
-        Warehouse warehouse1 = new Warehouse();
-        warehouse1.addProduct(new Builder().buildCountry("Poland").build());
-        warehouse1.addProduct(new Builder().buildCountry("Ukraine").build());
-        warehouses.add(warehouse);
-        warehouses.add(warehouse1);
         JsonUtil jsonUtil = new JsonUtil();
-        jsonUtil.serealise(warehouses, "warehouses.json");
-        List<Warehouse> warehouseFromJsonFile = jsonUtil.deserealise("warehouses.json");
-        assertEquals(warehouses.size(), warehouseFromJsonFile.size());
+        jsonUtil.serealise(warehouse, "warehouses.json");
+        Warehouse warehouseFromJsonFile = jsonUtil.deserealise("warehouses.json");
+        assertEquals(warehouse, warehouseFromJsonFile);
     }
 
     @Test
     public void checkSavingToXml() throws IOException {
-        List<Warehouse> warehouses = new ArrayList<>();
         Warehouse warehouse = new Warehouse();
+        warehouse.setId(1);
+        warehouse.setName("Glory");
         warehouse.addProduct(new Builder().buildCountry("Poland").build());
         warehouse.addProduct(new Builder().buildCountry("Poland").build());
-        Warehouse warehouse1 = new Warehouse();
-        warehouse1.addProduct(new Builder().buildCountry("Poland").build());
-        warehouse1.addProduct(new Builder().buildCountry("Ukraine").build());
-        warehouses.add(warehouse);
-        warehouses.add(warehouse1);
         XmlUtil xmlUtil = new XmlUtil();
-        xmlUtil.serealise(warehouses, "warehouse.xml");
-        List<Warehouse> warehouseFromXml = xmlUtil.deserealise("warehouse.xml");
+        xmlUtil.serealise(warehouse, "warehouse.xml");
+        Warehouse warehouseFromXml = xmlUtil.deserealise("warehouse.xml");
         assertEquals(warehouseFromXml, warehouse);
     }
 

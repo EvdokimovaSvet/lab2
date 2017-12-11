@@ -12,7 +12,7 @@ import java.util.List;
 
 public class JsonUtil implements FileUtil {
 
-    public void serealise(List<Warehouse> list, String nameOfFile) {
+    public void serealise(Warehouse list, String nameOfFile) {
         Gson gson = new Gson();
         String jsonInString = gson.toJson(list);
         try (FileWriter writer = new FileWriter(nameOfFile, false)) {
@@ -23,7 +23,7 @@ public class JsonUtil implements FileUtil {
         }
     }
 
-    public List<Warehouse> deserealise(String nameOfFile) {
+    public Warehouse deserealise(String nameOfFile) {
         StringBuilder resultString = new StringBuilder();
         try (BufferedReader br = new BufferedReader(new FileReader(nameOfFile))) {
             String sCurrentLine;
@@ -35,7 +35,7 @@ public class JsonUtil implements FileUtil {
         }
         String warehouses = resultString.toString();
         Gson gson = new Gson();
-        return gson.fromJson(warehouses, new TypeToken<List<Warehouse>>() {
+        return gson.fromJson(warehouses, new TypeToken<Warehouse>() {
         }.getType());
     }
 }
