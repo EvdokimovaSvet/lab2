@@ -1,4 +1,5 @@
 import builders.impls.Builder;
+import database.ConnectJavaWithMySQL;
 import model.Product;
 import model.Warehouse;
 import org.testng.annotations.Test;
@@ -131,7 +132,17 @@ public class TestProduct {
     }
 
     @Test
-    public void checkSqlConnection() throws SQLException {
-
+    public void checkSqlConnection() throws SQLException, ClassNotFoundException {
+        ConnectJavaWithMySQL mySQL = null;
+        mySQL.dropTables();
+        mySQL.setDatabase();
+        Warehouse warehouse = new Warehouse();
+        warehouse.setId(1);
+        warehouse.setName("Glory");
+        Product product = new Builder().buildId(1).buildName("Milk").buildCountry("Poland").buildWeight(900).buildDC(LocalDate.now()).buildDD(LocalDate.of(2017,12,30)).build();
+        warehouse.addProduct(product);
+        mySQL.addWarehouse(warehouse);
+        Product result = mySQL.getProductById(1);
+        assertEquals(product,result);
     }
 }

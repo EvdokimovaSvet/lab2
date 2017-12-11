@@ -85,13 +85,13 @@ public class ConnectJavaWithMySQL {
     public static Warehouse addWarehouseWithoutProducts(Warehouse warehouse) throws ClassNotFoundException, SQLException{
         Conn = makeConnection();
         Conn.createStatement();
-        String preparedUpdate1="Insert into warehouse (idware, name) values(?,?);";
+        String preparedUpdate1="INSERT INTO warehouse (idware, name) values(?,?);";
         PreparedStatement pr1= Conn.prepareStatement(preparedUpdate1);
         pr1.setInt(1, warehouse.getId());
         pr1.setString(2, warehouse.getName());
         pr1.executeUpdate();
 
-        String preparedQuery1="Select idware FROM warehouse WHERE idware=? ;";
+        String preparedQuery1="SELECT idware FROM warehouse WHERE idware=? ;";
         PreparedStatement pr2= Conn.prepareStatement(preparedQuery1);
         pr2.setInt(1, warehouse.getId());
         ResultSet resultSet=pr2.executeQuery();
@@ -197,7 +197,7 @@ public class ConnectJavaWithMySQL {
         }
     }
 
-    private static void dropTables() throws SQLException, ClassNotFoundException {
+    public static void dropTables() throws SQLException, ClassNotFoundException {
         Conn = makeConnection();
         Statement statement = Conn.createStatement();
         statement.executeUpdate("DROP TABLE IF EXISTS 'warehouse';");
