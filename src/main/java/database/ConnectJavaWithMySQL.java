@@ -8,7 +8,6 @@ import model.Warehouse;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.TreeSet;
 
 
 public class ConnectJavaWithMySQL {
@@ -149,6 +148,53 @@ public class ConnectJavaWithMySQL {
         }
         Conn.close();
         return namesProducts;
+    }
+
+    public static void deleteProduct(int id) throws SQLException, ClassNotFoundException {
+        Conn=makeConnection();
+        String prepQuery1="SELECT * FROM PRODUCT WHERE id_prod = ?;";
+        String prepDelete1="DELETE FROM PRODUCT WHERE id_prod= ? ;";
+        PreparedStatement preparedStatement= Conn.prepareStatement(prepQuery1);
+        preparedStatement.setString(1, id);
+        ResultSet resultSet= preparedStatement.executeQuery();
+
+        if(resultSet.next())
+        {Product product = new Builder().buildId(id).build();
+            product.setIdProduct(resultSet.getInt("id_prod"));
+
+            PreparedStatement preparedStatement1= Conn.prepareStatement(prepDelete1);
+            preparedStatement1.setInt(1, product.getIdOfProduct());
+            int rs = preparedStatement1.executeUpdate();
+            Conn.close();
+            if(rs == 0) throw new IllegalArgumentException("Product not found");
+        }
+    }
+
+    public static void deleteWarehouse(int nameOfWarehouse) throws SQLException, ClassNotFoundException {
+        Conn = makeConnection();
+        String prepQuery1="SELECT idWare FROM WAREHOUSE WHERE nameOfWarehouse = ? ;";
+        String prepDelete1="DELETE FROM WAREHOUSE WHERE nameOfWarehouse = ?;";
+        String prepQuery2="SELECT id_prod FORM PRODUCT WHERE idWare = ?;";
+        PreparedStatement preparedStatement = Conn.prepareStatement(prepQuery1);
+        preparedStatement.setInt(1, nameOfWarehouse);
+        ResultSet resultSet= preparedStatement.executeQuery();
+        if(resultSet.next())
+        {int idWare = resultSet.getInt("idWare");
+
+            PreparedStatement preparedStatement1 = Conn.prepareStatement(prepDelete1);
+            preparedStatement1.setInt(1, nameOfWarehouse);
+            int rs = preparedStatement1.executeUpdate();
+
+            PreparedStatement preparedStatement2 = Conn.prepareStatement(prepQuery2);
+            preparedStatement2.setInt(1, idWare);
+            ResultSet r2 = preparedStatement2.executeQuery();
+
+            while(r2.next()) {
+                deleteProduct(r2.getInt("id_prod"));
+            }
+            Conn.close();
+            if(rs == 0) throw new IllegalArgumentException("Warehouse not found");
+        }
     }
 
     private static void dropTables() throws SQLException, ClassNotFoundException {
