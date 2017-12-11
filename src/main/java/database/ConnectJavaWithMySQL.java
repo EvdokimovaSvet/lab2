@@ -34,7 +34,7 @@ public class ConnectJavaWithMySQL {
         String prepCreate="CREATE TABLE product\n" +
                 "(id_prod INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL,\n" +
                 " nameOfProduct CHAR(25) NOT NULL,\n" +
-                " cointryOfOrigin CHAR(25) NOT NULL,\n" +
+                " countryOfOrigin CHAR(25) NOT NULL,\n" +
                 " weight INTEGER NOT NULL,\n" +
                 " dateOfCreate DATE NOT  NULL,\n" +
                 " dateOfDeath DATE NOT NULL,\n" +
@@ -65,7 +65,7 @@ public class ConnectJavaWithMySQL {
             Conn = makeConnection();
             Conn.createStatement();
 
-            String insertQueryStatement = "INSERT  INTO  Product (id_prod, nameOfProduct,countryOfOrigin,weight,dateOfBirth,dateOfDeath,id_ware) VALUES  (?,?,?,?,?,?,?)";
+            String insertQueryStatement = "INSERT  INTO  Product (id_prod, nameOfProduct,countryOfOrigin,weight,dateOfCreate,dateOfDeath,idWare) VALUES  (?,?,?,?,?,?,?)";
 
             PrepareStat = Conn.prepareStatement(insertQueryStatement);
             PrepareStat.setInt(1, product.getIdOfProduct());
@@ -85,7 +85,7 @@ public class ConnectJavaWithMySQL {
     public static Warehouse addWarehouseWithoutProducts(Warehouse warehouse) throws ClassNotFoundException, SQLException{
         Conn = makeConnection();
         Conn.createStatement();
-        String preparedUpdate1="INSERT INTO warehouse (idware, name) values(?,?);";
+        String preparedUpdate1="INSERT INTO warehouse (idWare, nameOfWarehouse) values(?,?);";
         PreparedStatement pr1= Conn.prepareStatement(preparedUpdate1);
         pr1.setInt(1, warehouse.getId());
         pr1.setString(2, warehouse.getName());
@@ -138,7 +138,7 @@ public class ConnectJavaWithMySQL {
     public static List<String> getProductByWarehouse(Warehouse warehouse) throws SQLException, ClassNotFoundException{
         List<String> namesProducts = new ArrayList<>();
         Conn = makeConnection();
-        String preparedQuerry1="SELECT nameOfProduct FROM Product WHERE id_ware = ?;";
+        String preparedQuerry1="SELECT nameOfProduct FROM Product WHERE idware = ?;";
         PreparedStatement preparedStmt =  Conn.prepareStatement(preparedQuerry1);
         preparedStmt.setInt(1, warehouse.getId());
         ResultSet resultSet=preparedStmt.executeQuery();
@@ -200,8 +200,8 @@ public class ConnectJavaWithMySQL {
     public static void dropTables() throws SQLException, ClassNotFoundException {
         Conn = makeConnection();
         Statement statement = Conn.createStatement();
-        statement.executeUpdate("DROP TABLE IF EXISTS 'warehouse';");
-        statement.executeUpdate("DROP TABLE IF EXISTS 'product';");
+        statement.executeUpdate("DROP TABLE IF EXISTS warehouse;");
+        statement.executeUpdate("DROP TABLE IF EXISTS product;");
         Conn.close();
     }
 }

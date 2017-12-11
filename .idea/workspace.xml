@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="bbc0a359-ca22-4b7e-9bf6-c47ca1e93e90" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/database/ConnectJavaWithMySQL.java" afterPath="$PROJECT_DIR$/src/main/java/database/ConnectJavaWithMySQL.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/TestProduct.java" afterPath="$PROJECT_DIR$/src/test/java/TestProduct.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -27,44 +26,44 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ConnectJavaWithMySQL.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ConnectJavaWithMySQL.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/database/ConnectJavaWithMySQL.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="86">
-              <caret line="202" column="0" lean-forward="false" selection-start-line="202" selection-start-column="0" selection-end-line="202" selection-end-column="0" />
+            <state relative-caret-position="225">
+              <caret line="103" column="57" lean-forward="true" selection-start-line="103" selection-start-column="57" selection-end-line="103" selection-end-column="57" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1512978290878" expanded="true" signature="876:1086" ph="CREATE TABLE... product" />
-                <marker date="1512978290878" expanded="true" signature="876:1089" ph="CREATE TABLE... product" />
-                <marker date="1512978290878" expanded="true" signature="876:1134" ph="CREATE TABLE... product" />
-                <marker date="1512978290878" expanded="true" signature="876:1186" ph="CREATE TABLE... product" />
-                <marker date="1512978290878" expanded="true" signature="876:1236" ph="CREATE TABLE... product" />
-                <marker date="1512978290878" expanded="true" signature="876:1274" ph="CREATE TABLE... product" />
-                <marker date="1512978290878" expanded="true" signature="876:1304" ph="CREATE TABLE... product" />
-                <marker date="1512978290878" expanded="true" signature="1537:1694" ph="CREATE TABLE... department" />
-                <marker date="1512978290878" expanded="true" signature="2243:2368" ph="INSERT INTO Product" />
-                <marker date="1512978290878" expanded="true" signature="3254:3302" ph="Insert into garage... " />
-                <marker date="1512978290878" expanded="true" signature="3527:3570" ph="Select garag... garage" />
-                <marker date="1512978290878" expanded="true" signature="4330:4705" ph="SELECT c.car... car" />
-                <marker date="1512978290878" expanded="true" signature="5572:5623" ph="SELECT Selec... " />
-                <marker date="1512978290878" expanded="true" signature="5621:5623" ph="Select teach... teachers" />
-                <marker date="1512978290878" expanded="true" signature="6132:6171" ph="Select * fro... car" />
-                <marker date="1512978290878" expanded="true" signature="6203:6239" ph="DELETE FROM " />
-                <marker date="1512978290878" expanded="true" signature="7085:7139" ph="Select garag... garage" />
-                <marker date="1512978290878" expanded="true" signature="7172:7219" ph="DELETE FROM " />
-                <marker date="1512978290878" expanded="true" signature="7250:7294" ph="Select car_n... car" />
-                <marker date="1512978290878" expanded="true" signature="8405:8437" ph="DROP TABLE I... " />
-                <marker date="1512978290878" expanded="true" signature="8475:8505" ph="DROP TABLE I... " />
+                <marker date="1512981748495" expanded="true" signature="876:1086" ph="CREATE TABLE... product" />
+                <marker date="1512981748495" expanded="true" signature="876:1089" ph="CREATE TABLE... product" />
+                <marker date="1512981748495" expanded="true" signature="876:1134" ph="CREATE TABLE... product" />
+                <marker date="1512981748495" expanded="true" signature="876:1186" ph="CREATE TABLE... product" />
+                <marker date="1512981748495" expanded="true" signature="876:1236" ph="CREATE TABLE... product" />
+                <marker date="1512981748495" expanded="true" signature="876:1274" ph="CREATE TABLE... product" />
+                <marker date="1512981748495" expanded="true" signature="876:1304" ph="CREATE TABLE... product" />
+                <marker date="1512981748495" expanded="true" signature="1537:1694" ph="CREATE TABLE... department" />
+                <marker date="1512981748495" expanded="true" signature="2243:2368" ph="INSERT INTO Product" />
+                <marker date="1512981748495" expanded="true" signature="3254:3313" ph="Insert into garage... " />
+                <marker date="1512981748495" expanded="true" signature="3538:3581" ph="Select garag... garage" />
+                <marker date="1512981748495" expanded="true" signature="4341:4716" ph="SELECT c.car... car" />
+                <marker date="1512981748495" expanded="true" signature="5583:5633" ph="SELECT Selec... " />
+                <marker date="1512981748495" expanded="true" signature="5631:5633" ph="Select teach... teachers" />
+                <marker date="1512981748495" expanded="true" signature="6142:6181" ph="Select * fro... car" />
+                <marker date="1512981748495" expanded="true" signature="6213:6249" ph="DELETE FROM " />
+                <marker date="1512981748495" expanded="true" signature="7095:7149" ph="Select garag... garage" />
+                <marker date="1512981748495" expanded="true" signature="7182:7229" ph="DELETE FROM " />
+                <marker date="1512981748495" expanded="true" signature="7260:7304" ph="Select car_n... car" />
+                <marker date="1512981748495" expanded="true" signature="8415:8445" ph="DROP TABLE I... " />
+                <marker date="1512981748495" expanded="true" signature="8483:8511" ph="DROP TABLE I... " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TestProduct.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TestProduct.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/TestProduct.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
-              <caret line="147" column="1" lean-forward="true" selection-start-line="147" selection-start-column="1" selection-end-line="147" selection-end-column="1" />
+              <caret line="138" column="5" lean-forward="true" selection-start-line="138" selection-start-column="5" selection-end-line="138" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -127,8 +126,8 @@
         <option value="$PROJECT_DIR$/src/main/java/util/XmlUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/Product.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/Warehouse.java" />
-        <option value="$PROJECT_DIR$/src/main/java/database/ConnectJavaWithMySQL.java" />
         <option value="$PROJECT_DIR$/src/test/java/TestProduct.java" />
+        <option value="$PROJECT_DIR$/src/main/java/database/ConnectJavaWithMySQL.java" />
       </list>
     </option>
   </component>
@@ -156,7 +155,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="10" />
     <option name="y" value="20" />
     <option name="width" value="1346" />
@@ -653,7 +652,7 @@
       <workItem from="1512371848485" duration="4030000" />
       <workItem from="1512629508107" duration="667000" />
       <workItem from="1512726494463" duration="9379000" />
-      <workItem from="1512970155564" duration="6615000" />
+      <workItem from="1512970155564" duration="7331000" />
     </task>
     <task id="LOCAL-00001" summary="kjbk">
       <created>1512072039139</created>
@@ -666,39 +665,39 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestProduct - 2017.12.11 at 09h 19m 39s.xml">
-      <configuration name="TestProduct" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="TestProduct_checkSavingToXml - 2017.12.11 at 09h 21m 06s.xml">
-      <configuration name="TestProduct.checkSavingToXml" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="TestProduct_checkSavingToXml - 2017.12.11 at 09h 22m 14s.xml">
-      <configuration name="TestProduct.checkSavingToXml" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="TestProduct_checkSavingToXml - 2017.12.11 at 09h 22m 44s.xml">
-      <configuration name="TestProduct.checkSavingToXml" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="TestProduct_checkSavingToXml - 2017.12.11 at 09h 25m 33s.xml">
-      <configuration name="TestProduct.checkSavingToXml" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="TestProduct_checkSavingToXml - 2017.12.11 at 09h 26m 12s.xml">
-      <configuration name="TestProduct.checkSavingToXml" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="TestProduct_checkSavingToXml - 2017.12.11 at 09h 26m 44s.xml">
-      <configuration name="TestProduct.checkSavingToXml" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="TestProduct_checkSavingToXml - 2017.12.11 at 09h 27m 02s.xml">
-      <configuration name="TestProduct.checkSavingToXml" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="TestProduct_checkSqlConnection - 2017.12.11 at 09h 43m 57s.xml">
+    <history-entry file="TestProduct_checkSqlConnection - 2017.12.11 at 09h 44m 54s.xml">
       <configuration name="TestProduct.checkSqlConnection" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="TestProduct_checkSqlConnection - 2017.12.11 at 09h 44m 54s.xml">
+    <history-entry file="TestProduct_checkSqlConnection - 2017.12.11 at 09h 47m 30s.xml">
+      <configuration name="TestProduct.checkSqlConnection" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="TestProduct_checkSqlConnection - 2017.12.11 at 09h 51m 11s.xml">
+      <configuration name="TestProduct.checkSqlConnection" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="TestProduct_checkSqlConnection - 2017.12.11 at 09h 51m 57s.xml">
+      <configuration name="TestProduct.checkSqlConnection" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="TestProduct_checkSqlConnection - 2017.12.11 at 10h 39m 11s.xml">
+      <configuration name="TestProduct.checkSqlConnection" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="TestProduct_checkSqlConnection - 2017.12.11 at 10h 39m 54s.xml">
+      <configuration name="TestProduct.checkSqlConnection" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="TestProduct_checkSqlConnection - 2017.12.11 at 10h 40m 32s.xml">
+      <configuration name="TestProduct.checkSqlConnection" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="TestProduct_checkSqlConnection - 2017.12.11 at 10h 41m 09s.xml">
+      <configuration name="TestProduct.checkSqlConnection" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="TestProduct_checkSqlConnection - 2017.12.11 at 10h 42m 33s.xml">
+      <configuration name="TestProduct.checkSqlConnection" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="TestProduct_checkSqlConnection - 2017.12.11 at 10h 42m 46s.xml">
       <configuration name="TestProduct.checkSqlConnection" configurationId="TestNG" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77958000" />
+    <option name="totallyTimeSpent" value="78674000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -710,8 +709,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32840723" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -721,7 +719,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32840723" sideWeight="0.5030257" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14901665" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.44663382" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.44663382" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32840723" sideWeight="0.4969743" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1145,43 +1143,43 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/TestProduct.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/database/ConnectJavaWithMySQL.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="147" column="1" lean-forward="true" selection-start-line="147" selection-start-column="1" selection-end-line="147" selection-end-column="1" />
+        <state relative-caret-position="225">
+          <caret line="103" column="57" lean-forward="true" selection-start-line="103" selection-start-column="57" selection-end-line="103" selection-end-column="57" />
           <folding>
             <element signature="imports" expanded="true" />
+            <marker date="1512981748495" expanded="true" signature="876:1086" ph="CREATE TABLE... product" />
+            <marker date="1512981748495" expanded="true" signature="876:1089" ph="CREATE TABLE... product" />
+            <marker date="1512981748495" expanded="true" signature="876:1134" ph="CREATE TABLE... product" />
+            <marker date="1512981748495" expanded="true" signature="876:1186" ph="CREATE TABLE... product" />
+            <marker date="1512981748495" expanded="true" signature="876:1236" ph="CREATE TABLE... product" />
+            <marker date="1512981748495" expanded="true" signature="876:1274" ph="CREATE TABLE... product" />
+            <marker date="1512981748495" expanded="true" signature="876:1304" ph="CREATE TABLE... product" />
+            <marker date="1512981748495" expanded="true" signature="1537:1694" ph="CREATE TABLE... department" />
+            <marker date="1512981748495" expanded="true" signature="2243:2368" ph="INSERT INTO Product" />
+            <marker date="1512981748495" expanded="true" signature="3254:3313" ph="Insert into garage... " />
+            <marker date="1512981748495" expanded="true" signature="3538:3581" ph="Select garag... garage" />
+            <marker date="1512981748495" expanded="true" signature="4341:4716" ph="SELECT c.car... car" />
+            <marker date="1512981748495" expanded="true" signature="5583:5633" ph="SELECT Selec... " />
+            <marker date="1512981748495" expanded="true" signature="5631:5633" ph="Select teach... teachers" />
+            <marker date="1512981748495" expanded="true" signature="6142:6181" ph="Select * fro... car" />
+            <marker date="1512981748495" expanded="true" signature="6213:6249" ph="DELETE FROM " />
+            <marker date="1512981748495" expanded="true" signature="7095:7149" ph="Select garag... garage" />
+            <marker date="1512981748495" expanded="true" signature="7182:7229" ph="DELETE FROM " />
+            <marker date="1512981748495" expanded="true" signature="7260:7304" ph="Select car_n... car" />
+            <marker date="1512981748495" expanded="true" signature="8415:8445" ph="DROP TABLE I... " />
+            <marker date="1512981748495" expanded="true" signature="8483:8511" ph="DROP TABLE I... " />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/database/ConnectJavaWithMySQL.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/TestProduct.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="86">
-          <caret line="202" column="0" lean-forward="false" selection-start-line="202" selection-start-column="0" selection-end-line="202" selection-end-column="0" />
+        <state relative-caret-position="255">
+          <caret line="138" column="5" lean-forward="true" selection-start-line="138" selection-start-column="5" selection-end-line="138" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1512978290878" expanded="true" signature="876:1086" ph="CREATE TABLE... product" />
-            <marker date="1512978290878" expanded="true" signature="876:1089" ph="CREATE TABLE... product" />
-            <marker date="1512978290878" expanded="true" signature="876:1134" ph="CREATE TABLE... product" />
-            <marker date="1512978290878" expanded="true" signature="876:1186" ph="CREATE TABLE... product" />
-            <marker date="1512978290878" expanded="true" signature="876:1236" ph="CREATE TABLE... product" />
-            <marker date="1512978290878" expanded="true" signature="876:1274" ph="CREATE TABLE... product" />
-            <marker date="1512978290878" expanded="true" signature="876:1304" ph="CREATE TABLE... product" />
-            <marker date="1512978290878" expanded="true" signature="1537:1694" ph="CREATE TABLE... department" />
-            <marker date="1512978290878" expanded="true" signature="2243:2368" ph="INSERT INTO Product" />
-            <marker date="1512978290878" expanded="true" signature="3254:3302" ph="Insert into garage... " />
-            <marker date="1512978290878" expanded="true" signature="3527:3570" ph="Select garag... garage" />
-            <marker date="1512978290878" expanded="true" signature="4330:4705" ph="SELECT c.car... car" />
-            <marker date="1512978290878" expanded="true" signature="5572:5623" ph="SELECT Selec... " />
-            <marker date="1512978290878" expanded="true" signature="5621:5623" ph="Select teach... teachers" />
-            <marker date="1512978290878" expanded="true" signature="6132:6171" ph="Select * fro... car" />
-            <marker date="1512978290878" expanded="true" signature="6203:6239" ph="DELETE FROM " />
-            <marker date="1512978290878" expanded="true" signature="7085:7139" ph="Select garag... garage" />
-            <marker date="1512978290878" expanded="true" signature="7172:7219" ph="DELETE FROM " />
-            <marker date="1512978290878" expanded="true" signature="7250:7294" ph="Select car_n... car" />
-            <marker date="1512978290878" expanded="true" signature="8405:8437" ph="DROP TABLE I... " />
-            <marker date="1512978290878" expanded="true" signature="8475:8505" ph="DROP TABLE I... " />
           </folding>
         </state>
       </provider>
