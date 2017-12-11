@@ -155,7 +155,7 @@ public class ConnectJavaWithMySQL {
         String prepQuery1="SELECT * FROM PRODUCT WHERE id_prod = ?;";
         String prepDelete1="DELETE FROM PRODUCT WHERE id_prod= ? ;";
         PreparedStatement preparedStatement= Conn.prepareStatement(prepQuery1);
-        preparedStatement.setString(1, id);
+        preparedStatement.setInt(1, id);
         ResultSet resultSet= preparedStatement.executeQuery();
 
         if(resultSet.next())
